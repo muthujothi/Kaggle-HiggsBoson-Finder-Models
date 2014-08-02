@@ -1,0 +1,49 @@
+jet0 - 1 : 19, :,20
+jet1 - 1 : 23, :,24
+jet2 - 1 : 30, :,31
+jet3 - 1 : 30, :,31
+
+350003	s	0.869430858
+350104	b	0.031653134
+350199	s	0.832042395
+
+Jet based model when fitted with 
+max_depth = 5 gave a LB 2.91883
+Jet based model when fitted with 
+max_depth = 3 gave a LB 2.89756
+Jet based model when fitted with
+logistic regression gave LB of 2.07892
+Jet based model when fitted with
+depth = 5 and percentages to reflect the distribution in training set
+it dropped to 2.68152
+
+
+let us try a base model with 
+max_depth  = 3
+
+81869 are predicted as signals in max_depth=3
+81838 were predicted as signals in
+max_depth=5
+82441 were predicted as signals in
+logistic regression.
+
+Tune the following knobs to avoid overfitting in GBRT,
+
+1. Lower the learning rate but increase the number of estimators.
+2. Tune the min sample leaf to get some decent number rather than capturing some stupid outlier in the leaf
+3. Max tree depth control the function interactions. 3 - 6 is more than enough else u will be overfiting
+
+
+Training share of jet records
+
+PRI_jet_num 0 99913 25492 - 25%
+PRI_jet_num 1 77544 27710 - 36%
+PRI_jet_num 2 50379 25734 - 51%
+PRI_jet_num 3 22164 6731  - 30%
+
+Test set share of jet records
+
+PRI_jet_num 0 220156 550000 - 25%
+PRI_jet_num 1 169716 550000 - 36%
+PRI_jet_num 2 111006 550000 - 51%
+PRI_jet_num 3  49122 550000  - 30%

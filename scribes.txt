@@ -1,0 +1,62 @@
+(250000L, 2L)
+(250000L, 1L)
+X
+[[ 0.40473133  0.66083916]
+ [ 0.68386521  0.78926645]
+ [ 1.52660987  1.26455258]
+ ..., 
+ [ 0.55916831  0.05420312]
+ [-0.53766064 -0.1769843 ]
+ [ 0.73900168 -0.10825892]]
+Y
+ [[1]
+ [0]
+ [0]
+ ..., 
+ [1]
+ [0]
+ [0]]
+ 
+ 
+ The model identifies 98/250000 records as signals with >= 0.9 probability. False Positives.
+ At the same time identifies only 75 signals are identified with >= 0.9 probability.
+ So when we keep 0.9 as cutoff, the method will identify (98 + 75) as signals 173.Out of which only 75 are correct signals where as 98
+ are false positives.
+ 
+ The model identifies 1878/250000 records as signals with >=0.9 probability. False positives.
+ At the same identifies 3424/250000 signals as signals with >=0.9 probability. True Positives.
+ So when u keep 0.8 as cut-off, 
+ if(p > 0.8)
+	it is a signals 3424
+ else
+	it is a baclground noise 1878
+
+ p >= 0.9 FP - 98   and TP - 75
+ p >= 0.8 FP - 1878 and TP - 3424 
+ p >= 0.7 FP - 3339 and TP - 5293
+ 
+ Python 2.7.3 (default, Apr 10 2012, 23:24:47) [MSC v.1500 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> ================================ RESTART ================================
+>>> 
+Training classifier (this may take some time!)
+      Iter       Train Loss   Remaining Time 
+         1           1.2199            4.36m
+         2           1.1638            4.33m
+         3           1.1182            4.18m
+         4           1.0758            4.10m
+         5           1.0370            4.04m
+         6           1.0056            3.96m
+         7           0.9793            3.88m
+         8           0.9567            3.87m
+         9           0.9372            3.80m
+        10           0.9201            3.73m
+        20           0.8186            2.88m
+        30           0.7765            1.89m
+        40           0.7537           56.36s
+        50           0.7410            0.00s
+chossing cut off probability to predict an event as a signal...
+0.783255159179
+starting in test data
+done.
+>>> 
