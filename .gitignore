@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.csv
 *.rar
+*.zip
 
 # C extensions
 *.so
